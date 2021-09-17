@@ -17,15 +17,14 @@ class App
 
     public function add(array $midlewares)
     {
-        foreach (array_reverse($midlewares) as $midleware)
-        {
+        foreach (array_reverse($midlewares) as $midleware) {
             $this->do($midleware);
         }
     }
 
     private function do(MiddlewareInterface $midleware)
     {
-        $this->midleware->add($midleware);        
+        $this->midleware->add($midleware);
     }
 
     public function run(PeticionInterface $Peticion)

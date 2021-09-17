@@ -10,7 +10,7 @@ class Middleware
 
     public function __construct()
     {
-        $this->start = function ($peticion){
+        $this->start = function ($peticion) {
             return $peticion;
         };
     }
@@ -19,8 +19,7 @@ class Middleware
     {
         $next = $this->start;
 
-        $this->start = function (PeticionInterface $peticion) use ($midleware, $next)
-        {
+        $this->start = function (PeticionInterface $peticion) use ($midleware, $next) {
             return $midleware($peticion, $next);
         };
     }
